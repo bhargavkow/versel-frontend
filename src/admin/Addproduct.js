@@ -39,7 +39,7 @@ const Addproduct = () => {
   }, []);
 
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
 
   const fetchData = async () => {
     try {
@@ -347,11 +347,11 @@ const Addproduct = () => {
         if (imageUrl.startsWith('http')) {
           return imageUrl;
         } else if (imageUrl.startsWith('/uploads/')) {
-          return `http://localhost:5000${imageUrl}`;
+          return `${API_URL}${imageUrl}`;
         } else if (imageUrl.startsWith('/')) {
-          return `http://localhost:5000${imageUrl}`;
+          return `${API_URL}${imageUrl}`;
         } else {
-          return `http://localhost:5000/uploads/products/${imageUrl}`;
+          return `${API_URL}/uploads/products/${imageUrl}`;
         }
       });
       setPreviewOtherImages(imageUrls);

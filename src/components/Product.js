@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import DynamicProductDisplay from './DynamicProductDisplay';
+import { API_URL } from '../config';
 
 const Product = () => {
   const { id } = useParams();
@@ -31,7 +32,7 @@ const Product = () => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`${API_URL}/api/products/${id}`);
         const productData = response.data.data || response.data;
         
         console.log('=== PRODUCT DEBUG INFO ===');
@@ -264,11 +265,11 @@ const Product = () => {
                     if (imageSrc.startsWith('http')) {
                       imageUrl = imageSrc;
                     } else if (imageSrc.startsWith('/uploads/')) {
-                      imageUrl = `http://localhost:5000${imageSrc}`;
+                      imageUrl = `${API_URL}${imageSrc}`;
                     } else if (imageSrc.startsWith('/')) {
-                      imageUrl = `http://localhost:5000${imageSrc}`;
+                      imageUrl = `${API_URL}${imageSrc}`;
               } else {
-                      imageUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
+                      imageUrl = `${API_URL}/uploads/products/${imageSrc}`;
               }
               
               return (
@@ -281,9 +282,9 @@ const Product = () => {
                             console.error('Display image failed to load:', imageUrl);
                             let altUrl;
                             if (imageSrc.startsWith('/uploads/')) {
-                              altUrl = `http://localhost:5000${imageSrc}`;
+                              altUrl = `${API_URL}${imageSrc}`;
                             } else if (imageSrc.startsWith('/')) {
-                              altUrl = `http://localhost:5000${imageSrc}`;
+                              altUrl = `${API_URL}${imageSrc}`;
                             } else {
                               altUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
                             }
@@ -349,9 +350,9 @@ const Product = () => {
                   if (imageSrc.startsWith('http')) {
                     imageUrl = imageSrc;
                   } else if (imageSrc.startsWith('/uploads/')) {
-                    imageUrl = `http://localhost:5000${imageSrc}`;
+                      imageUrl = `${API_URL}${imageSrc}`;
                   } else if (imageSrc.startsWith('/')) {
-                    imageUrl = `http://localhost:5000${imageSrc}`;
+                      imageUrl = `${API_URL}${imageSrc}`;
                   } else {
                     imageUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
                   }
@@ -372,9 +373,9 @@ const Product = () => {
                         onError={(e) => {
                           let altUrl;
                           if (imageSrc.startsWith('/uploads/')) {
-                            altUrl = `http://localhost:5000${imageSrc}`;
+                            altUrl = `${API_URL}${imageSrc}`;
                           } else if (imageSrc.startsWith('/')) {
-                            altUrl = `http://localhost:5000${imageSrc}`;
+                            altUrl = `${API_URL}${imageSrc}`;
                           } else {
                             altUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
                           }
@@ -391,9 +392,9 @@ const Product = () => {
                   if (imageSrc.startsWith('http')) {
                     imageUrl = imageSrc;
                   } else if (imageSrc.startsWith('/uploads/')) {
-                    imageUrl = `http://localhost:5000${imageSrc}`;
+                      imageUrl = `${API_URL}${imageSrc}`;
                   } else if (imageSrc.startsWith('/')) {
-                    imageUrl = `http://localhost:5000${imageSrc}`;
+                      imageUrl = `${API_URL}${imageSrc}`;
                   } else {
                     imageUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
                   }
@@ -415,9 +416,9 @@ const Product = () => {
                         onError={(e) => {
                           let altUrl;
                           if (imageSrc.startsWith('/uploads/')) {
-                            altUrl = `http://localhost:5000${imageSrc}`;
+                            altUrl = `${API_URL}${imageSrc}`;
                           } else if (imageSrc.startsWith('/')) {
-                            altUrl = `http://localhost:5000${imageSrc}`;
+                            altUrl = `${API_URL}${imageSrc}`;
                           } else {
                             altUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
                           }

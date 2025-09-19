@@ -6,8 +6,9 @@ import Footer from "./Footer";
 import Popup from "./Popup";
 import { usePopup } from "../hooks/usePopup";
 import axios from "axios";
+import { API_URL } from "../config";
 
-const API_BASE = "http://localhost:5000/address";
+const API_BASE = `${API_URL}/address`;
 
 const Buy = () => {
   const location = useLocation();

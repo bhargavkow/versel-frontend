@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Popup from "../components/Popup";
 import { usePopup } from "../hooks/usePopup";
+import { API_URL } from "../config";
 
 function Order() {
   const [orders, setOrders] = useState([]);
@@ -18,7 +19,7 @@ function Order() {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/orders");
+      const response = await axios.get(`${API_URL}/api/orders`);
       setOrders(response.data.data || []);
     } catch (err) {
       console.error('Error fetching orders:', err);
@@ -30,7 +31,7 @@ function Order() {
 
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/${orderId}/status`, {
+      await axios.put(`${API_URL}/api/orders/${orderId}/status`, {
         status: newStatus
       });
       fetchOrders(); // Refresh the list

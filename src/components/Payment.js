@@ -6,7 +6,7 @@ import Footer from './Footer';
 import Popup from './Popup';
 import { usePopup } from '../hooks/usePopup';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
 
 const Payment = () => {
   const location = useLocation();

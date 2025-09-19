@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash, faPlus, faTimes, faCheck, faToggleOn, faToggleOff, faFilter } from '@fortawesome/free-solid-svg-icons';
+import { API_URL } from '../config';
 
 const SubcategoryManager = () => {
     const [subcategories, setSubcategories] = useState([]);
@@ -23,10 +24,11 @@ const SubcategoryManager = () => {
         fetchData();
     }, []);
 
-    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+    const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
     
     // Try alternative API URLs if the default fails
     const API_URLS = [
+        API_URL,
         'http://localhost:5000',
         'http://127.0.0.1:5000',
         'http://192.168.1.11:5000'

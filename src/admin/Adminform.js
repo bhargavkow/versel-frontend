@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config";
 
 function Adminform({ onLoginSuccess }) {
   const [username, setUsername] = useState("");
@@ -23,7 +24,7 @@ function Adminform({ onLoginSuccess }) {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${API_URL}/api/auth/login`,
         { username: username, password: password },
         { headers: { "Content-Type": "application/json" } }
       );

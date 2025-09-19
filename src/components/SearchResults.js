@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { API_URL } from "../config";
 
 const SearchResults = () => {
   const query = new URLSearchParams(useLocation().search).get("q")?.toLowerCase();
@@ -12,6 +13,7 @@ const SearchResults = () => {
 
   // API URLs to try
   const API_URLS = [
+    API_URL,
     'http://localhost:5000',
     'http://127.0.0.1:5000',
     'http://192.168.1.11:5000'
@@ -81,11 +83,11 @@ const SearchResults = () => {
     if (imageSrc.startsWith('http')) {
       return imageSrc; // Full URL
     } else if (imageSrc.startsWith('/uploads/')) {
-      return `http://localhost:5000${imageSrc}`; // Backend serves from /uploads route
+      return `${API_URL}${imageSrc}`; // Backend serves from /uploads route
     } else if (imageSrc.startsWith('/')) {
-      return `http://localhost:5000${imageSrc}`; // Other relative paths
+      return `${API_URL}${imageSrc}`; // Other relative paths
     } else {
-      return `http://localhost:5000/uploads/products/${imageSrc}`; // Just filename
+      return `${API_URL}/uploads/products/${imageSrc}`; // Just filename
     }
   };
 
@@ -150,11 +152,11 @@ const SearchResults = () => {
                         if (originalSrc) {
                           let altUrl;
                           if (originalSrc.startsWith('/uploads/')) {
-                            altUrl = `http://localhost:5000${originalSrc}`;
+                            altUrl = `${API_URL}${originalSrc}`;
                           } else if (originalSrc.startsWith('/')) {
-                            altUrl = `http://localhost:5000${originalSrc}`;
+                            altUrl = `${API_URL}${originalSrc}`;
                           } else {
-                            altUrl = `http://localhost:5000/uploads/products/${originalSrc}`;
+                            altUrl = `${API_URL}/uploads/products/${originalSrc}`;
                           }
                           console.log('Trying alternative search result image URL:', altUrl);
                           e.target.src = altUrl;

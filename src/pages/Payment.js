@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Popup from "../components/Popup";
 import { usePopup } from "../hooks/usePopup";
+import { API_URL } from "../config";
 
 function Payment() {
   const [payments, setPayments] = useState([]);
@@ -18,7 +19,7 @@ function Payment() {
   const fetchPayments = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/payments");
+      const response = await axios.get(`${API_URL}/api/payments`);
       setPayments(response.data.data || []);
     } catch (err) {
       console.error('Error fetching payments:', err);
@@ -30,7 +31,7 @@ function Payment() {
 
   const updatePaymentStatus = async (paymentId, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/payments/${paymentId}/status`, {
+      await axios.put(`${API_URL}/api/payments/${paymentId}/status`, {
         status: newStatus
       });
       fetchPayments(); // Refresh the list

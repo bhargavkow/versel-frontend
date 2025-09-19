@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Popup from "./Popup";
 import { usePopup } from "../hooks/usePopup";
+import { API_URL } from "../config";
 
 const Favorite = () => {
     const { favorites, toggleFavorite } = useContext(FavoritesContext);
@@ -94,11 +95,11 @@ const Favorite = () => {
                                                     if (imageSrc.startsWith('http')) {
                                                         return imageSrc; // Full URL
                                                     } else if (imageSrc.startsWith('/uploads/')) {
-                                                        return `http://localhost:5000${imageSrc}`; // Backend serves from /uploads route
+                                                        return `${API_URL}${imageSrc}`; // Backend serves from /uploads route
                                                     } else if (imageSrc.startsWith('/')) {
-                                                        return `http://localhost:5000${imageSrc}`; // Other relative paths
+                                                        return `${API_URL}${imageSrc}`; // Other relative paths
                                                     } else {
-                                                        return `http://localhost:5000/uploads/products/${imageSrc}`; // Just filename
+                                                        return `${API_URL}/uploads/products/${imageSrc}`; // Just filename
                                                     }
                                                 })()} 
                                                 alt={product.productName || product.name} 
@@ -110,11 +111,11 @@ const Favorite = () => {
                                                     if (originalSrc) {
                                                         let altUrl;
                                                         if (originalSrc.startsWith('/uploads/')) {
-                                                            altUrl = `http://localhost:5000${originalSrc}`;
+                                                            altUrl = `${API_URL}${originalSrc}`;
                                                         } else if (originalSrc.startsWith('/')) {
-                                                            altUrl = `http://localhost:5000${originalSrc}`;
+                                                            altUrl = `${API_URL}${originalSrc}`;
                                                         } else {
-                                                            altUrl = `http://localhost:5000/uploads/products/${originalSrc}`;
+                                                            altUrl = `${API_URL}/uploads/products/${originalSrc}`;
                                                         }
                                                         console.log('Trying alternative favorite image URL:', altUrl);
                                                         e.target.src = altUrl;
