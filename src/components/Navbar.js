@@ -17,10 +17,10 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   // API URLs to try
-  const API_URLS = [
-    API_URL,
-    'http://localhost:5000',
-    'http://127.0.0.1:5000',
+    const API_URLS = [
+        API_URL,
+        'https://stylehub-backend-nu.vercel.app',
+        'http://127.0.0.1:5000',
     'http://192.168.1.11:5000'
   ];
 

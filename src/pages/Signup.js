@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import stylehub4 from "../imges/stylehub4.png";
 
 // Define API URL
-const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
+const API_URL = process.env.REACT_APP_API_URL || 'https://stylehub-backend-nu.vercel.app';
 
 
 

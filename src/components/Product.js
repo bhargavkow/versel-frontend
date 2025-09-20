@@ -286,7 +286,7 @@ const Product = () => {
                             } else if (imageSrc.startsWith('/')) {
                               altUrl = `${API_URL}${imageSrc}`;
                             } else {
-                              altUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
+                              altUrl = `https://stylehub-backend-nu.vercel.app/uploads/products/${imageSrc}`;
                             }
                       e.target.src = altUrl;
                     }}
@@ -354,7 +354,7 @@ const Product = () => {
                   } else if (imageSrc.startsWith('/')) {
                       imageUrl = `${API_URL}${imageSrc}`;
                   } else {
-                    imageUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
+                    imageUrl = `https://stylehub-backend-nu.vercel.app/uploads/products/${imageSrc}`;
                   }
                   
                   return (
@@ -377,7 +377,7 @@ const Product = () => {
                           } else if (imageSrc.startsWith('/')) {
                             altUrl = `${API_URL}${imageSrc}`;
                           } else {
-                            altUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
+                            altUrl = `https://stylehub-backend-nu.vercel.app/uploads/products/${imageSrc}`;
                           }
                           e.target.src = altUrl;
                         }}
@@ -396,7 +396,7 @@ const Product = () => {
                   } else if (imageSrc.startsWith('/')) {
                       imageUrl = `${API_URL}${imageSrc}`;
                   } else {
-                    imageUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
+                    imageUrl = `https://stylehub-backend-nu.vercel.app/uploads/products/${imageSrc}`;
                   }
                   
                   return (
@@ -420,7 +420,7 @@ const Product = () => {
                           } else if (imageSrc.startsWith('/')) {
                             altUrl = `${API_URL}${imageSrc}`;
                           } else {
-                            altUrl = `http://localhost:5000/uploads/products/${imageSrc}`;
+                            altUrl = `https://stylehub-backend-nu.vercel.app/uploads/products/${imageSrc}`;
                           }
                           e.target.src = altUrl;
                         }}

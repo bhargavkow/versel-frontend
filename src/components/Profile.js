@@ -6,7 +6,7 @@ import axios from "axios";
 import Navbar from "./Navbar";
 
 // Define API URL
-const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
+const API_URL = process.env.REACT_APP_API_URL || 'https://stylehub-backend-nu.vercel.app';
 
 const Profile = () => {
   const { user, setUser } = useUser();

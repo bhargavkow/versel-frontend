@@ -6,7 +6,7 @@ import Popup from "../components/Popup";
 import { usePopup } from "../hooks/usePopup";
 
 // Define API URL
-const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
+const API_URL = process.env.REACT_APP_API_URL || 'https://stylehub-backend-nu.vercel.app';
 
 const Users = () => {
   const [users, setUsers] = useState([]);

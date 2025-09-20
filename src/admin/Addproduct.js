@@ -39,7 +39,7 @@ const Addproduct = () => {
   }, []);
 
 
-  const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://stylehub-backend-nu.vercel.app';
 
   const fetchData = async () => {
     try {

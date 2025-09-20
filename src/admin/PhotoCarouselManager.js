@@ -20,7 +20,7 @@ const PhotoCarouselManager = () => {
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
-  const API_URL = process.env.REACT_APP_API_URL || 'https://vercel-backend-seven.vercel.app';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://stylehub-backend-nu.vercel.app';
   
   // Debug: Log API URL
   console.log('🔍 PhotoCarouselManager API_URL:', API_URL);
